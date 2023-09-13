@@ -1,5 +1,6 @@
 import { toast } from "./components/toast.js";
 import { signMessage } from "./config/index.js";
+import { navigate } from "./router-controller/index.js";
 
 const form = document.querySelector("#sign-in-form");
 form.addEventListener("submit", async (event) => {
@@ -30,7 +31,7 @@ form.addEventListener("submit", async (event) => {
       throw Error("Invalid signature");
     }
 
-    window.location.replace("/private");
+    navigate("send");
   } catch (error) {
     toast({
       variant: "destructive",

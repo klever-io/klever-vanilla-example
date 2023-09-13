@@ -1,4 +1,10 @@
+import { navigate } from "../scripts/router-controller/index.js";
 import { toast } from "./components/toast.js";
+
+const routeButton = document.querySelector("#send-route-button");
+routeButton.addEventListener("click", () => {
+  navigate("send");
+});
 
 function getTruncateAddress(size = 15) {
   const firstPart = address.slice(0, size);
