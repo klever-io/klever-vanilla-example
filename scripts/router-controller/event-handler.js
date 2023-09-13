@@ -7,6 +7,13 @@ async function insertContent(path) {
   const html = await content.text();
 
   document.body.innerHTML = html;
+
+  const script = document.createElement("script");
+  script.async = false;
+  script.type = "module";
+  script.src = `scripts/${path}.js`;
+
+  document.body.appendChild(script);
 }
 
 document.addEventListener("pushRoute", async (event) => {
