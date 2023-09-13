@@ -1,0 +1,94 @@
+<html>
+  <main class="w-screen h-screen flex items-center justify-center">
+    <div class="p-4 border border-slate-300 rounded-md shadow-sm">
+      <div class="flex items-center justify-between gap-4">
+        <div>
+          <h1 class="font-bold text-lg">Private Page</h1>
+          <h3 class="text-sm">Make transactions or receive any value</h3>
+        </div>
+        <div>
+          <button 
+            class="flex items-center justify-center w-full px-1.5 h-8 bg-slate-700 rounded-md text-white text-sm hover:bg-slate-600 disabled:bg-slate-400 disabled:cursor-not-allowed" 
+            type="submit"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="lucide lucide-log-out w-4 h-4"
+            >
+              <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
+              <polyline points="16 17 21 12 16 7" />
+              <line x1="21" x2="9" y1="12" y2="12" />
+            </ svg>
+          </div>
+        </form>
+      </div>
+
+      <div class="my-4 h-[1px] w-full bg-slate-300"></div>
+
+      <div class="grid grid-cols-2 gap-2">
+        <button
+          class="pt-4 pb-3 rounded-md flex flex-col items-center justify-center border border-slate-300 hover:bg-slate-300"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="lucide lucide-send w-5 h-5"
+          >
+            <path d="m22 2-7 20-4-9-9-4Z" />
+            <path d="M22 2 11 13" />
+          </ svg>
+          <span class="text-sm">Send</span>
+        </button>
+        <button
+          class="pt-4 pb-3 rounded-md flex flex-col items-center justify-center border border-slate-300 hover:bg-slate-300"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="lucide lucide-arrow-down-to-line w-5 h-5"
+          >
+            <path d="M12 17V3" />
+            <path d="m6 11 6 6 6-6" />
+            <path d="M19 21H5" />
+          </ svg>
+          <span class="text-sm">Receive</span>
+        </button>
+      </div>
+
+      <div class="my-4">
+        <div class="flex flex-col">
+          <span class="text-sm text-slate-500">Your address:</span>
+          <span id="address-text" class="font-bold"></span>
+          <button
+            id="copy-address" 
+            class="mt-4 flex items-center justify-center w-full px-1.5 h-8 bg-slate-700 rounded-md text-white text-sm hover:bg-slate-600 disabled:bg-slate-400 disabled:cursor-not-allowed"
+            >
+              Copy
+          </button>
+        </div>
+      </div>
+    </div>
+  </main>
+</html>
