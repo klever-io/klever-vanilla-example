@@ -9,7 +9,7 @@ async function insertContent(path) {
   document.body.innerHTML = html;
 
   const script = document.createElement("script");
-  script.async = false;
+  script.async = true;
   script.type = "module";
   script.src = `scripts/${path}.js`;
 

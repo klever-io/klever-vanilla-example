@@ -6,7 +6,7 @@ routeButton.addEventListener("click", () => {
   navigate("send");
 });
 
-function getTruncateAddress(size = 15) {
+function getTruncateAddress(address, size = 15) {
   const firstPart = address.slice(0, size);
   const lastPart = address.slice(-size);
 
@@ -14,26 +14,22 @@ function getTruncateAddress(size = 15) {
 }
 
 const text = document.querySelector("#address-text");
-const button = document.querySelector("#copy-address");
-(async function () {
-  try {
-    const address = await window.kleverWeb.getWalletAddress();
-    text.innerText = getTruncateAddress(address);
-
-    button.addEventListener("click", () => {
-      navigator.clipboard.writeText(address);
-
-      toast({
-        title: getTruncateAddress(address),
-      });
-    });
-  } catch (error) {
-    toast({
-      title: error,
-      variant: "destructive",
-    });
-
-    text.innerText = "N/A";
-    button.disabled = true;
-  }
+(function () {
+  const address = window.kleverWeb.address;
+  text.innerText = address ? getTruncateAddress(address) : "N/A";
 })();
+
+const button = document.querySelector("#copy-address");
+button.addEventListener("click", () => {
+  const address = window.kleverWeb.address;
+  if (!address) {
+    document.querySelector("#copy-address").disabled = true;
+    return;
+  }
+
+  navigator.clipboard.writeText(address);
+
+  toast({
+    title: "Address copied to clipboard",
+  });
+});
