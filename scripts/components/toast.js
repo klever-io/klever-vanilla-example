@@ -1,12 +1,12 @@
 /**
  * @typedef {object} Config
  * @property {string} title
- * @property {string} variant
+ * @property {(string|undefined)} variant
  * @property {(string|undefined)} destination
  */
 
 /**
- * @params {string} variant
+ * @param {string} variant
  * @returns {object}
  */
 function getVariant(variant) {
@@ -34,7 +34,7 @@ function getVariant(variant) {
 }
 
 /**
- * @params {Config} config
+ * @param {Config} config
  */
 export function toast({ title, variant = "default", destination }) {
   const instance = Toastify({

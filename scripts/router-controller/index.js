@@ -1,5 +1,5 @@
 /**
- * @params {string} path
+ * @param {string} path
  */
 export function navigate(path) {
   const push = new CustomEvent("pushRoute", {
